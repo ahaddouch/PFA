@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -12,10 +10,12 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(children: [
-            Text("Login"),
-            Placeholder(),
-          ], s)
+          Row(
+            children: [
+              Text("Login"),
+              Text("Register"),
+            ],
+          )
         ],
       ),
     );
