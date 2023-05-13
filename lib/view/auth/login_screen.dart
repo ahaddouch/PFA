@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pfa/constance.dart';
+
+import '../widgets/custom_text.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -6,18 +9,46 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: Colors.green,
+          backgroundColor: primaryColor,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(
+            top: 20,
+            left: 10,
+            right: 10,
+          ),
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Login"),
-                  Text("Register"),
+                  CustumText(
+                    text: 'Welcom',
+                    fontSize: 30,
+                  ),
+                  CustumText(
+                    text: 'Sign Up',
+                    fontSize: 18,
+                    color: primaryColor,
+                  ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustumText(
+                text: 'Sign in to Continue',
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              CustumText(
+                text: 'Email',
+                fontSize: 14,
+                color: Colors.grey,
+              ),
             ],
           ),
         ));
