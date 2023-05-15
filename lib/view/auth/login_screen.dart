@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pfa/constance.dart';
 
 import '../widgets/custom_button.dart';
+import '../widgets/custom_media_button.dart';
 import '../widgets/custom_text.dart';
 import '../widgets/custum_text_box.dart';
 
@@ -25,7 +26,7 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
-                    text: 'Welcom',
+                    text: 'Welcome',
                     fontSize: 30,
                   ),
                   CustomText(
@@ -100,8 +101,36 @@ class LoginScreen extends StatelessWidget {
                 text: 'Sign In ',
                 onPressed: () {},
               ),
+
+
+              const SizedBox(
+                height: 20, ),
+               CustomText(
+                text: '-OR-',
+                alignment: Alignment.center,
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              CustomMediaButton(
+                text: 'Sign In with Facebook',
+                onPressed: () {
+
+                },
+                imagePath: 'assets/images/facebook.png',
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              CustomMediaButton(
+                text: 'Sign In with Google',
+                onPressed: () {
+                },
+                imagePath: 'assets/images/google.png',
+              ),
             ],
-          )),
+          ),
+      ),
     );
   }
 }

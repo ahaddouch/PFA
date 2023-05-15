@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'custom_text.dart';
 
 class CustomTextBox extends StatelessWidget {
@@ -8,37 +7,44 @@ class CustomTextBox extends StatelessWidget {
   final Function onSave;
   final Function validator;
 
-
-  CustomTextBox({
-    super.key,
-    required this.text,
-    required this.hint,
+  const CustomTextBox({
+    this.text = '',
+    this.hint = '',
     required this.onSave,
-    required this.validator,});
+    required this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          CustomText(
-            text: text,
-            fontSize: 14,
-            color: Colors.grey.shade900,
-          ),
-
-           TextFormField(
-              onSaved: onSave(),
-              validator: validator(),
-              decoration:  InputDecoration(
-              hintText: hint,
-              hintStyle: TextStyle(color: Colors.grey),
-              fillColor: Colors.white,
+    return Flexible(
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomText(
+              text: text,
+              fontSize: 14,
+              color: Colors.grey.shade900,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+              onSaved: (value) => onSave(value),
+              validator: (value) => validator(value),
+              decoration: InputDecoration(
+                hintText: hint,
+                hintStyle: const TextStyle(
+                  color: Colors.black,
+                ),
+                filled: true,
+                fillColor: Colors.white,
               ),
-          ),
-
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
