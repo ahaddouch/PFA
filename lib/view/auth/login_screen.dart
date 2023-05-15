@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: primaryColor,
+        backgroundColor: secondaryColor,
       ),
       body: Padding(
           padding: const EdgeInsets.only(
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.grey,
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
 
               CustomText(
@@ -51,23 +51,71 @@ class LoginScreen extends StatelessWidget {
                 fontSize: 14,
                 color: Colors.grey.shade900,
               ),
+              const SizedBox(
+                height: 20,
+              ),
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: 'exemple@gmail.com',
                   hintStyle: TextStyle(color: Colors.grey),
                   fillColor: Colors.white,
                 ),
+                onSaved: (value) {},
+                validator: (value) {},
               ),
-              // CustomTextBox(
-              //   text: 'Email',
-              //   hint: 'exemple@gmail.com',
-              //   onSave: (value) {},
-              // ),
-              // CustomTextBox(
-              //   text: 'Password',
-              //   hint: '********',
-              //   onSave: (value) {},
-              // ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomText(
+                text: 'Password',
+                fontSize: 14,
+                color: Colors.grey.shade900,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: '********',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  fillColor: Colors.white,
+                ),
+                onSaved: (value) {},
+                validator: (value) {},
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomText(
+                text: 'Forget Password?',
+                fontSize: 14,
+                alignment: Alignment.topRight,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.95,
+                padding: const EdgeInsets.all(4),
+                margin: const EdgeInsets.only(
+                  left: 10,
+                  right: 10,
+                ),
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(20),
+
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: CustomText(
+                    text: 'Sign In',
+                    fontSize: 18,
+                    color: secondaryColor,
+                    alignment: Alignment.center,
+                  ),
+                ),
+              ),
             ],
           )),
     );

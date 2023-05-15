@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CustumText extends StatelessWidget {
+class CustomText extends StatelessWidget {
   final String text;
   final double fontSize;
   final Color color;
   final Alignment alignment;
-  CustumText(
+  CustomText(
       {this.text = '',
       this.fontSize = 16,
       this.color = Colors.black,
