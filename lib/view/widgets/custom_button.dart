@@ -4,7 +4,11 @@ import '../../constance.dart';
 import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
+  final String text;
+  final Function onPressed;
 
+
+  CustomButton({required this.text, required this.onPressed,});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,9 @@ class CustomButton extends StatelessWidget {
 
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed:onPressed(),
         child: CustomText(
-          text: 'Sign In',
+          text: text,
           fontSize: 18,
           color: secondaryColor,
           alignment: Alignment.center,
