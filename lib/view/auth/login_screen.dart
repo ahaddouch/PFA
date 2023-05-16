@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.center,
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               CustomMediaButton(
                 text: 'Sign In with Facebook',
